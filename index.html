@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio</title>
+		<!-- Tailwind CSS CDN -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- Inter font from Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+		<!-- AOS Animate On Scroll CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+		<style>
+			body { font-family: 'Inter', sans-serif; }
+		</style>
+	</head>
+	<body class="bg-gray-900 text-white min-h-screen">
+		<!-- Navbar -->
+		<nav class="w-full py-4 mb-8 border-b border-gray-800">
+			<div class="container mx-auto px-4 flex items-center justify-between">
+				<span class="text-xl font-semibold">Arpit Patel</span>
+				<ul class="flex space-x-6">
+					<li><a href="#about" class="hover:text-sky-400 transition">About</a></li>
+					<li><a href="#education" class="hover:text-sky-400 transition">Education</a></li>
+					<li><a href="#projects" class="hover:text-sky-400 transition">Projects</a></li>
+					<li><a href="#contact" class="hover:text-sky-400 transition">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container mx-auto px-4 py-8">
+			<!-- Hero Section -->
+			<section class="flex flex-col items-center justify-center text-center min-h-[60vh] mb-16" data-aos="fade-up">
+				<h1 class="text-4xl md:text-5xl font-bold mb-6">Full-Stack Developer | First-Year CS Student</h1>
+				<p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl">
+					I don't just write code; I build solutions. I combine my academic foundations with a self-taught passion for development to create real-world applications.
+				</p>
+				<a href="#projects" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition">View My Work</a>
+			</section>
+			<!-- About Section -->
+			<section id="about" class="mb-16" data-aos="fade-up">
+				<h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div>
+						<h3 class="text-xl font-semibold mb-3">My Journey</h3>
+						<p class="text-gray-400 mb-6">
+							My journey into development began in the 7th grade, driven by a curiosity to understand how the web works. This passion has led me down a path of self-learning across the full stack, from backend logic in Laravel to real-time communication with WebSockets.
+						</p>
+					</div>
+					<div>
+						<h3 class="text-xl font-semibold mb-3">Skills</h3>
+						<div class="mb-2 font-semibold text-gray-300">Frontend</div>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">HTML</span>
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">CSS</span>
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">JavaScript</span>
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">Tailwind CSS</span>
+						</div>
+						<div class="mb-2 font-semibold text-gray-300">Backend</div>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">Laravel</span>
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">PHP</span>
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">Node.js</span>
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">WebSockets</span>
+						</div>
+						<div class="mb-2 font-semibold text-gray-300">Databases</div>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">MySQL</span>
+						</div>
+						<div class="mb-2 font-semibold text-gray-300">DevOps &amp; Specialized</div>
+						<div class="flex flex-wrap gap-2">
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">Docker</span>
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">Git</span>
+							<span class="bg-gray-800 px-2 py-1 rounded text-xs">Linux</span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Education Section -->
+			<section id="education" class="mb-16" data-aos="fade-up">
+				<h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Education</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-gray-800 rounded-lg p-6 text-center">
+						<h3 class="text-xl font-semibold mb-2">Hansraj College, University of Delhi</h3>
+						<p class="text-gray-400">B.Sc. (Hons) Computer Science (2025-2029)</p>
+					</div>
+					<div class="bg-gray-800 rounded-lg p-6 text-center">
+						<h3 class="text-xl font-semibold mb-2">S.B.M. Sr. Sec. School, New Delhi</h3>
+						<p class="text-gray-400">Class 12th, Computer Science (2024-2025)</p>
+					</div>
+					<div class="bg-gray-800 rounded-lg p-6 text-center">
+						<h3 class="text-xl font-semibold mb-2">BBS International School, Prayagraj</h3>
+						<p class="text-gray-400">Class 10th</p>
+					</div>
+				</div>
+			</section>
+			<!-- Projects Section -->
+			<section id="projects" class="mb-16" data-aos="fade-up">
+						<h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Projects</h2>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+							<!-- Project Card 1 -->
+							<div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col transform transition-transform hover:scale-105" data-aos="fade-up">
+								<img src="https://via.placeholder.com/400x200?text=Screenshot" alt="E-commerce & Domain Platform Screenshot" class="rounded-md mb-4 object-cover h-40 w-full" />
+								<h3 class="text-xl font-semibold mb-2">E-commerce &amp; Domain Platform</h3>
+								<p class="text-gray-400 mb-3">A comprehensive platform for buying domains and e-commerce products, featuring secure payments and user management.</p>
+								<ul class="flex flex-wrap gap-2 mb-4">
+									<li class="bg-gray-900 px-2 py-1 rounded text-xs">Laravel</li>
+									<li class="bg-gray-900 px-2 py-1 rounded text-xs">PHP</li>
+									<li class="bg-gray-900 px-2 py-1 rounded text-xs">MySQL</li>
+									<li class="bg-gray-900 px-2 py-1 rounded text-xs">JavaScript</li>
+									<li class="bg-gray-900 px-2 py-1 rounded text-xs">Opencart</li>
+								</ul>
+								<div class="mt-auto flex gap-3">
+									<a href="#" class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded transition">Live Demo</a>
+									<a href="/projects/ecommerce-domain-platform" class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded transition">View More Details</a>
+								</div>
+							</div>
+							<!-- Project Card 2 -->
+							<div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col transform transition-transform hover:scale-105" data-aos="fade-up">
+								<img src="https://via.placeholder.com/400x200?text=Screenshot" alt="Complaint System 24x7 Screenshot" class="rounded-md mb-4 object-cover h-40 w-full" />
+								<h3 class="text-xl font-semibold mb-2">Complaint System 24x7</h3>
+								<p class="text-gray-400 mb-3">A robust complaint management system for real-time issue tracking and resolution, available 24x7 for users.</p>
+								<ul class="flex flex-wrap gap-2 mb-4">
+									<li class="bg-gray-900 px-2 py-1 rounded text-xs">Python</li>
+									<li class="bg-gray-900 px-2 py-1 rounded text-xs">MySQL</li>
+								</ul>
+								<div class="mt-auto">
+									<a href="https://github.com/delhiarpitpatel/python-cli-complaint-system" class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded transition">View on GitHub</a>
+                                    <a href="/projects/python-cli-complaint-system/case-study.pdf" class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded transition">View Case Study (PDF)</a>
+								</div>
+							</div>
+						</div>
+			</section>
+			<!-- Contact Section -->
+			<section id="contact" class="mb-16" data-aos="fade-up">
+						<h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Get In Touch</h2>
+						<div class="max-w-md mx-auto flex flex-col items-center space-y-6">
+							<!-- Email -->
+							<a href="mailto:delhiarpitpatel@gmail.com" class="w-full flex items-center gap-3 bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m8 0v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6" /></svg>
+								<span class="text-gray-300">delhiarpitpatel@gmail.com</span>
+							</a>
+							<!-- GitHub -->
+							<a href="https://github.com/delhiarpitpatel" target="_blank" class="w-full flex items-center gap-3 bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.012c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.833.091-.646.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.254-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.396.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .268.18.579.688.481C19.138 20.175 22 16.427 22 12.012 22 6.484 17.523 2 12 2z"/></svg>
+								<span class="text-gray-300">GitHub</span>
+							</a>
+							<!-- LinkedIn -->
+							<a href="https://linkedin.com/in/delhiarpitpatel" target="_blank" class="w-full flex items-center gap-3 bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.156 1.459-2.156 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.599 2.001 3.599 4.601v5.595z"/></svg>
+								<span class="text-gray-300">LinkedIn</span>
+							</a>
+						</div>
+			</section>
+		</div>
+		<!-- AOS Animate On Scroll JS -->
+		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+		<script>
+			AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+		</script>
+	</body>
+</html>
