@@ -4,10 +4,12 @@ import Image from 'next/image';
 
 const AboutSection = () => {
   const skills = [
-    { name: 'Frontend Development', percentage: 90 },
-    { name: 'Backend Development', percentage: 85 },
-    { name: 'Database Design', percentage: 80 },
-    { name: 'DevOps & Cloud', percentage: 75 },
+    { name: 'PHP/Laravel', percentage: 95 },
+    { name: 'JavaScript', percentage: 85 },
+    { name: 'MySQL', percentage: 90 },
+    { name: 'Node.js', percentage: 80 },
+    { name: 'Tailwind CSS', percentage: 85 },
+    { name: 'Automation', percentage: 90 },
   ];
 
   return (
@@ -28,8 +30,9 @@ const AboutSection = () => {
               <div className="space-y-3">
                 <p><strong>Name:</strong> <span className="text-gray-600">Arpit Patel</span></p>
                 <p><strong>Email:</strong> <span className="text-gray-600">delhiarpitpatel@gmail.com</span></p>
-                <p><strong>Location:</strong> <span className="text-gray-600">Your Location</span></p>
-                <p><strong>Experience:</strong> <span className="text-gray-600">X years</span></p>
+                <p><strong>Location:</strong> <span className="text-gray-600">New Delhi, India</span></p>
+                <p><strong>Experience:</strong> <span className="text-gray-600">4+ years</span></p>
+                <p><strong>Education:</strong> <span className="text-gray-600">B.Sc. (Hons) Computer Science, Hansraj College, University of Delhi</span></p>
               </div>
             </div>
 
@@ -57,7 +60,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-square relative rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/about-image.jpg"
+                src="/images/about/profile.jpg"
                 alt="Arpit Patel working"
                 fill
                 className="object-cover"

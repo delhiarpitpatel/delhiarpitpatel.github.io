@@ -17,15 +17,32 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Project One",
-    description: "A brief description of your first project and its key features.",
-    image: "/images/portfolio/project1.jpg",
-    category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project1"
+    title: "Automated Large-Scale Database Migration Script",
+    description: "A custom PHP solution to handle large-scale database migrations that would otherwise fail due to server timeouts and memory limits. It intelligently exports and imports each table as a compressed ZIP file, making the process robust and reliable.",
+    image: "/images/portfolio/app-1.jpg",
+    category: "Automation",
+    technologies: ["PHP", "MySQL", "ZIP", "CLI"],
+    githubUrl: "https://github.com/delhiarpitpatel/automate-sql-import-export-cli"
   },
-  // Add more projects here
+  {
+    id: 2,
+    title: "E-commerce & Domain Management Platform",
+    description: "A multi-tenant platform with a custom Laravel backend that allows users to manage their products and custom domains from a single dashboard, integrating with the OpenCart e-commerce system.",
+    image: "/images/portfolio/app-2.jpg",
+    category: "Web Development",
+    technologies: ["Laravel", "PHP", "MySQL", "OpenCart"],
+    demoUrl: "https://domains.propnal.com/",
+    githubUrl: "https://www.randompublications.com/"
+  },
+  {
+    id: 3,
+    title: "Mindful Media Timer (Android App)",
+    description: "An Android app designed to solve the common problem of media apps running all night. The project brief outlines the architecture for a custom app that automatically stops media playback when the user falls asleep.",
+    image: "/images/portfolio/app-3.jpg",
+    category: "Mobile Development",
+    technologies: ["Android", "Java", "Mobile Development"],
+    githubUrl: "https://github.com/delhiarpitpatel/android-mindful-media-timer"
+  }
 ];
 
 const PortfolioSection = () => {

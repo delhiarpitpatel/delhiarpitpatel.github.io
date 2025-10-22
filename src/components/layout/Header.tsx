@@ -7,7 +7,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="header fixed w-full bg-white shadow-md">
+    <header className="header fixed w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
           Arpit Patel
@@ -47,6 +47,16 @@ const Header = () => {
             <li>
               <Link href="#about" className="block py-2 hover:text-blue-600">
                 About
+              </Link>
+            </li>
+            <li>
+              <Link href="#skills" className="block py-2 hover:text-blue-600">
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link href="#experience" className="block py-2 hover:text-blue-600">
+                Experience
               </Link>
             </li>
             <li>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import "./globals.css";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -22,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} antialiased`}>
+      <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      <body className="antialiased">
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gray-50 pt-32 pb-20">
+    <section className="relative bg-gray-50 pt-20 pb-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
@@ -12,10 +12,10 @@ const HeroSection = () => {
               Hi, I'm Arpit Patel
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-600 mb-6">
-              Software Developer
+              Full-Stack Developer
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              I build modern web applications with a focus on user experience and performance.
+              Passionate PHP/Laravel developer specializing in building clean, efficient, and scalable web applications. I love automation and crafting tools that solve real-world problems.
             </p>
             <div className="flex gap-4">
               <a
@@ -36,7 +36,7 @@ const HeroSection = () => {
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <Image
-                src="/images/profile.jpg"
+                src="/images/about/profile.jpg"
                 alt="Arpit Patel"
                 fill
                 className="rounded-full object-cover shadow-lg"
