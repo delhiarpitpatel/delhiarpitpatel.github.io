@@ -1,48 +1,50 @@
 'use client';
 
+import Image from 'next/image';
+
 const SkillsSection = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
       skills: [
-        { name: "PHP", level: 90 },
-        { name: "JavaScript", level: 85 },
-        { name: "Python", level: 75 }
+        { name: "PHP", logo: "/images/logos/php.svg" },
+        { name: "JavaScript", logo: "/images/logos/javascript.svg" },
+        { name: "Python", logo: "/images/logos/python.svg" }
       ]
     },
     {
       title: "Backend Frameworks",
       skills: [
-        { name: "Laravel", level: 90 },
-        { name: "Node.js", level: 80 }
+        { name: "Laravel", logo: "/images/logos/laravel.svg" },
+        { name: "Node.js", logo: "/images/logos/nodejs.svg" }
       ]
     },
     {
       title: "Frontend Technologies",
       skills: [
-        { name: "HTML", level: 95 },
-        { name: "CSS", level: 90 },
-        { name: "Tailwind CSS", level: 85 },
-        { name: "Canva", level: 80 },
-        { name: "Figma", level: 75 }
+        { name: "HTML", logo: "/images/logos/html5.svg" },
+        { name: "CSS", logo: "/images/logos/css3.svg" },
+        { name: "Tailwind CSS", logo: "/images/logos/tailwindcss.svg" },
+        { name: "Canva", logo: "/images/logos/canva.svg" },
+        { name: "Figma", logo: "/images/logos/figma.svg" }
       ]
     },
     {
       title: "Databases",
       skills: [
-        { name: "MySQL", level: 85 }
+        { name: "MySQL", logo: "/images/logos/mysql.svg" }
       ]
     },
     {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git", level: 85 },
-        { name: "GitHub", level: 85 },
-        { name: "REST APIs", level: 80 },
-        { name: "Puppeteer", level: 75 },
-        { name: "PM2", level: 70 },
-        { name: "CWP", level: 70 },
-        { name: "VPS", level: 70 }
+        { name: "Git", logo: "/images/logos/git.svg" },
+        { name: "GitHub", logo: "/images/logos/github.svg" },
+        { name: "REST APIs", logo: "🔗" },
+        { name: "Puppeteer", logo: "/images/logos/puppeteer.svg" },
+        { name: "PM2", logo: "/images/logos/pm2.svg" },
+        { name: "CWP", logo: "/images/logos/apache.svg" },
+        { name: "VPS", logo: "🖥️" }
       ]
     }
   ];
@@ -61,19 +63,24 @@ const SkillsSection = () => {
           {skillCategories.map((category, index) => (
             <div key={index} className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-6 text-center">{category.title}</h3>
-              <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-600">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-gray-200 rounded">
-                      <div
-                        className="h-full bg-blue-600 rounded transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
+                  <div
+                    key={skillIndex}
+                    className="flex flex-col items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    {skill.logo.startsWith('/') ? (
+                      <Image
+                        src={skill.logo}
+                        alt={skill.name}
+                        width={50}
+                        height={50}
+                        className="w-12 h-12"
                       />
-                    </div>
+                    ) : (
+                      <span className="text-3xl">{skill.logo}</span>
+                    )}
+                    <span className="text-xs font-medium text-center text-gray-700">{skill.name}</span>
                   </div>
                 ))}
               </div>

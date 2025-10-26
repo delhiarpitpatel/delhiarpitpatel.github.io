@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Project = {
   id: number;
@@ -113,12 +114,18 @@ const PortfolioSection = () => {
                 </div>
                 
                 <div className="flex gap-4">
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="text-blue-600 hover:text-blue-700"
+                  >
+                    View Details
+                  </Link>
                   {project.demoUrl && (
                     <a
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-700"
+                      className="text-green-600 hover:text-green-700"
                     >
                       Live Demo
                     </a>

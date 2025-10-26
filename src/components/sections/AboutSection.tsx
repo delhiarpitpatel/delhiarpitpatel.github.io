@@ -60,7 +60,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-square relative rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/about/profile.jpg"
+                src="/images/about/profile.jpeg"
                 alt="Arpit Patel working"
                 fill
                 className="object-cover"

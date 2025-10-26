@@ -36,7 +36,7 @@ const HeroSection = () => {
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <Image
-                src="/images/about/profile.jpg"
+                src="/images/about/profile.jpeg"
                 alt="Arpit Patel"
                 fill
                 className="rounded-full object-cover shadow-lg"
