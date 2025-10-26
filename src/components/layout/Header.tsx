@@ -45,23 +45,18 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="#about" className="block py-2 hover:text-blue-600">
-                About
-              </Link>
-            </li>
-            <li>
               <Link href="#skills" className="block py-2 hover:text-blue-600">
                 Skills
               </Link>
             </li>
             <li>
-              <Link href="#experience" className="block py-2 hover:text-blue-600">
-                Experience
+              <Link href="#portfolio" className="block py-2 hover:text-blue-600">
+                Portfolio
               </Link>
             </li>
             <li>
-              <Link href="#portfolio" className="block py-2 hover:text-blue-600">
-                Portfolio
+              <Link href="#experience" className="block py-2 hover:text-blue-600">
+                Experience
               </Link>
             </li>
             <li>

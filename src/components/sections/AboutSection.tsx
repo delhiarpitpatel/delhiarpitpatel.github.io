@@ -35,26 +35,6 @@ const AboutSection = () => {
                 <p><strong>Education:</strong> <span className="text-gray-600">B.Sc. (Hons) Computer Science, Hansraj College, University of Delhi</span></p>
               </div>
             </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
-              <div className="space-y-4">
-                {skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-gray-600">{skill.percentage}%</span>
-                    </div>
-                    <div className="h-2 bg-gray-200 rounded">
-                      <div
-                        className="h-full bg-blue-600 rounded"
-                        style={{ width: `${skill.percentage}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           <div className="relative">
