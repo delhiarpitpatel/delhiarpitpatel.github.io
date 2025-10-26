@@ -23,44 +23,44 @@ const SkillsSection = () => {
     {
       title: "Programming Languages",
       skills: [
-        { name: "PHP", logo: "/images/logos/php.svg" },
-        { name: "JavaScript", logo: "/images/logos/javascript.svg" },
-        { name: "Python", logo: "/images/logos/python.svg" }
+        { name: "PHP", logo: "/images/logos/php.svg", url: "https://www.php.net/" },
+        { name: "JavaScript", logo: "/images/logos/javascript.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+        { name: "Python", logo: "/images/logos/python.svg", url: "https://www.python.org/" }
       ]
     },
     {
       title: "Backend Frameworks",
       skills: [
-        { name: "Laravel", logo: "/images/logos/laravel.svg" },
-        { name: "Node.js", logo: "/images/logos/nodejs.svg" }
+        { name: "Laravel", logo: "/images/logos/laravel.svg", url: "https://laravel.com/" },
+        { name: "Node.js", logo: "/images/logos/nodejs.svg", url: "https://nodejs.org/" }
       ]
     },
     {
       title: "Frontend Technologies",
       skills: [
-        { name: "HTML", logo: "/images/logos/html5.svg" },
-        { name: "CSS", logo: "/images/logos/css3.svg" },
-        { name: "Tailwind CSS", logo: "/images/logos/tailwindcss.svg" },
-        { name: "Canva", logo: "/images/logos/canva.svg" },
-        { name: "Figma", logo: "/images/logos/figma.svg" }
+        { name: "HTML", logo: "/images/logos/html5.svg", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+        { name: "CSS", logo: "/images/logos/css3.svg", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+        { name: "Tailwind CSS", logo: "/images/logos/tailwindcss.svg", url: "https://tailwindcss.com/" },
+        { name: "Canva", logo: "/images/logos/canva.svg", url: "https://www.canva.com/" },
+        { name: "Figma", logo: "/images/logos/figma.svg", url: "https://www.figma.com/" }
       ]
     },
     {
       title: "Databases",
       skills: [
-        { name: "MySQL", logo: "/images/logos/mysql.svg" }
+        { name: "MySQL", logo: "/images/logos/mysql.svg", url: "https://www.mysql.com/" }
       ]
     },
     {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git", logo: "/images/logos/git.svg" },
-        { name: "GitHub", logo: "/images/logos/github.svg" },
-        { name: "REST APIs", logo: "🔗" },
-        { name: "Puppeteer", logo: "/images/logos/puppeteer.svg" },
-        { name: "PM2", logo: "/images/logos/pm2.svg" },
-        { name: "CWP", logo: "/images/logos/apache.svg" },
-        { name: "VPS", logo: "🖥️" }
+        { name: "Git", logo: "/images/logos/git.svg", url: "https://git-scm.com/" },
+        { name: "GitHub", logo: "/images/logos/github.svg", url: "https://github.com/" },
+        { name: "REST APIs", logo: "🔗", url: "https://restfulapi.net/" },
+        { name: "Puppeteer", logo: "/images/logos/puppeteer.svg", url: "https://pptr.dev/" },
+        { name: "PM2", logo: "/images/logos/pm2.svg", url: "https://pm2.io/" },
+        { name: "CWP", logo: "/images/logos/apache.svg", url: "http://control-webpanel.com/" },
+        { name: "VPS", logo: "🖥️", url: "https://en.wikipedia.org/wiki/Virtual_private_server" }
       ]
     }
   ];
@@ -129,14 +129,17 @@ const SkillsSection = () => {
                   {/* Skills Display */}
                   <div className="flex flex-wrap gap-3">
                     {category.skills.map((skill, skillIndex) => (
-                      <div
+                      <a
                         key={skillIndex}
+                        href={skill.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={`group relative flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer ${
                           index % 2 === 0
                             ? 'bg-white/80 hover:bg-blue-100 text-blue-800 hover:text-blue-900'
                             : 'bg-white/80 hover:bg-purple-100 text-purple-800 hover:text-purple-900'
                         } shadow-sm hover:shadow-md`}
-                        title={skill.name}
+                        title={`${skill.name} - Click to visit official website`}
                       >
                         {skill.logo.startsWith('/') ? (
                           <Image
@@ -158,7 +161,7 @@ const SkillsSection = () => {
                         <div className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity ${
                           index % 2 === 0 ? 'bg-blue-500' : 'bg-purple-500'
                         }`}></div>
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>
