@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arpit Patel | Full Stack Architect</title>
+
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+    <meta name="description"
+        content="Arpit Patel - Full Stack Architect specializing in Laravel, SaaS, and scalable systems.">
+    <meta name="keywords" content="Full Stack Developer, Laravel, SaaS, PHP, Node.js, Delhi">
+    <meta property="og:title" content="Arpit Patel | Full Stack Architect">
+    <meta property="og:description" content="Building scalable SaaS architectures and automated workflows.">
+    <meta property="og:image" content="./assets/images/arpit-patel.png">
+    <meta property="og:url" content="https://delhiarpitpatel.github.io">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#0f172a',
+                        surface: '#1e293b',
+                        primary: '#6366f1',
+                        secondary: '#38bdf8',
+                        text: {
+                            main: '#f8fafc',
+                            muted: '#94a3b8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+
+<body class="selection:bg-primary selection:text-white">
+    <!-- Loading Screen -->
+    <div id="loader"
+        class="fixed inset-0 z-[100] bg-background flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-4">
+            </div>
+            <p class="text-text-muted text-sm font-mono">Loading...</p>
+        </div>
+    </div>
+
+    <div class="bg-glow"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-2 border-b border-white/5 bg-background/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="./assets/images/arpit-patel.png" alt="AP" loading="lazy"
+                    class="w-12 h-12 object-contain rounded-full">
+                <span class="font-semibold tracking-tight text-white">Arpit Patel</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex gap-8 text-sm font-medium text-text-muted">
+                <a href="#expertise" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#projects" class="hover:text-white transition-colors">Work</a>
+                <a href="#journey" class="hover:text-white transition-colors">Journey</a>
+                <a href="#education" class="hover:text-white transition-colors">Education</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <!-- Hire Me + Mobile Menu Button -->
+            <div class="flex items-center gap-3">
+                <a href="#contact"
+                    class="px-4 py-2 rounded-full bg-primary/20 border border-primary/30 text-xs md:text-sm font-medium text-primary hover:bg-primary hover:text-white transition-all">
+                    <i class="fa-solid fa-paper-plane mr-1 md:mr-2"></i><span class="hidden sm:inline">Hire
+                        Me</span><span class="sm:hidden">Hire</span>
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden text-white text-xl p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-md border-b border-white/5">
+            <div class="flex flex-col p-6 gap-4 text-sm font-medium text-text-muted">
+                <a href="#home" class="hover:text-white transition-colors py-2 border-b border-white/5">Home</a>
+                <a href="#expertise"
+                    class="hover:text-white transition-colors py-2 border-b border-white/5">Expertise</a>
+                <a href="#projects" class="hover:text-white transition-colors py-2 border-b border-white/5">Work</a>
+                <a href="#journey" class="hover:text-white transition-colors py-2 border-b border-white/5">Journey</a>
+                <a href="#education"
+                    class="hover:text-white transition-colors py-2 border-b border-white/5">Education</a>
+                <a href="#contact" class="hover:text-white transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <main class="relative z-10 flex flex-col items-center">
+        <section id="home" class="min-h-screen w-full max-w-7xl mx-auto px-6 flex flex-col justify-center py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium text-primary">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        Available for Projects
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+                        Building Scalable <br>
+                        <span class="text-gradient-primary">SaaS Architectures</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-text-muted max-w-xl leading-relaxed">
+                        Full Stack Architect & 1st Year CS Undergraduate at <span class="text-white font-medium">Hansraj
+                            College</span>.
+                        I design high-performance systems and automated workflows.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/delhiarpitpatel" target="_blank"
+                            class="px-8 py-3 rounded-lg bg-primary hover:bg-indigo-500 text-white font-medium transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-github text-lg"></i> View GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative h-[500px] w-full hidden lg:flex items-center justify-center">
+                    <div class="absolute w-80 h-96 bg-primary/10 rounded-2xl rotate-6 border border-primary/20"></div>
+                    <div
+                        class="absolute w-80 h-96 bg-surface rounded-2xl -rotate-6 border border-white/10 shadow-2xl flex flex-col p-6">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="space-y-3 font-mono text-[11px] text-text-muted">
+                            <div class="p-4 bg-background/50 rounded border border-white/5">
+                                <span class="text-primary">const</span> Developer = {<br>
+                                &nbsp;&nbsp;name: <span class="text-secondary">'Arpit'</span>,<br>
+                                &nbsp;&nbsp;college: <span class="text-secondary">'Hansraj'</span>,<br>
+                                &nbsp;&nbsp;skills: [<span class="text-secondary">'Laravel'</span>, <span
+                                    class="text-secondary">'Node'</span>],<br>
+                                &nbsp;&nbsp;role: <span class="text-secondary">'System Administrator'</span><br>
+                                };
+                            </div>
+                            <div class="h-2 bg-white/5 rounded w-3/4"></div>
+                            <div class="h-2 bg-white/5 rounded w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-modern rounded-3xl mt-4 p-8 md:px-16 md:py-8 relative overflow-hidden group">
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-red-600/20 rounded-full blur-3xl -mr-8 -mt-8 pointer-events-none">
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                    <div class="text-center md:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold uppercase tracking-widest mb-4">
+                            <i class="fa-brands fa-youtube"></i> Content Creator
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Business Automation With AI</h2>
+                        <p class="text-text-muted max-w-lg text-lg leading-relaxed">
+                            Documenting my journey building scalable SaaS architectures. Tutorials on Laravel, VPS
+                            optimization, and High-Performance Backends.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-4 min-w-[200px]">
+                        <a href="https://www.youtube.com/@businessAutomationWithAI" target="_blank"
+                            class="px-6 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-center transition-all flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-youtube text-xl"></i> Visit Channel
+                        </a>
+                        <div class="text-center text-xs text-white/40 font-mono">@businessAutomationWithAI</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="expertise" class="w-full max-w-7xl px-6 py-12 border-t border-white/5">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight mb-4">Technical Expertise</h2>
+                    <p class="text-text-muted max-w-xl">
+                        A comprehensive toolkit for building robust, scalable applications.
+                    </p>
+                </div>
+                <div class="text-sm font-medium text-primary">Core Competencies</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                <!-- 1. Languages -->
+                <div class="card-modern p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                    <i class="fa-solid fa-code text-2xl text-secondary mb-4"></i>
+                    <h3 class="font-bold mb-3">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-php text-blue-400"></i> PHP</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-js text-yellow-400"></i> JavaScript</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-python text-green-400"></i> Python</span>
+                    </div>
+                </div>
+
+                <!-- 2. Backend -->
+                <div class="card-modern p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                    <i class="fa-solid fa-layer-group text-2xl text-primary mb-4"></i>
+                    <h3 class="font-bold mb-3">Backend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-laravel text-red-500"></i> Laravel</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-node text-green-500"></i> Node.js</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-solid fa-database text-blue-400"></i> MySQL</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-solid fa-cloud text-gray-400"></i> REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- 3. Frontend & Design (New) -->
+                <div class="card-modern p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                    <i class="fa-solid fa-palette text-2xl text-pink-400 mb-4"></i>
+                    <h3 class="font-bold mb-3">Frontend & Design</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-html5 text-orange-500"></i> HTML5</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-css3-alt text-blue-500"></i> CSS3</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-solid fa-wind text-cyan-400"></i> Tailwind</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-figma text-pink-500"></i> Figma</span>
+                    </div>
+                </div>
+
+                <!-- 4. DevOps & Infra -->
+                <div class="card-modern p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                    <i class="fa-solid fa-server text-2xl text-green-400 mb-4"></i>
+                    <h3 class="font-bold mb-3">DevOps & Infra</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-docker text-blue-500"></i> Docker</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-solid fa-server text-green-500"></i> Nginx</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-linux text-yellow-500"></i> Linux</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-solid fa-cloud-arrow-up text-indigo-400"></i> VPS/CWP</span>
+                    </div>
+                </div>
+
+                <!-- 5. Tools & Automation (New) -->
+                <div class="card-modern p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                    <i class="fa-solid fa-toolbox text-2xl text-orange-400 mb-4"></i>
+                    <h3 class="font-bold mb-3">Tools & Automation</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-git-alt text-orange-600"></i> Git</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-brands fa-github text-white"></i> GitHub</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-solid fa-robot text-teal-400"></i> Puppeteer</span>
+                        <span
+                            class="px-3 py-1 bg-white/5 text-xs text-text-muted rounded border border-white/10 flex items-center gap-2"><i
+                                class="fa-solid fa-microchip text-indigo-400"></i> PM2</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="w-full max-w-7xl px-6 py-16 border-t border-white/5">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight mb-2">Featured Engineering</h2>
+                    <p class="text-text-muted">High-impact solutions solving real infrastructure & logic problems.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-modern rounded-2xl overflow-hidden group">
+                    <div
+                        class="h-48 bg-gradient-to-br from-blue-900/20 to-surface border-b border-white/5 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                        <div class="text-center relative z-10">
+                            <div class="text-4xl font-mono font-bold text-blue-400 mb-2">SQL</div>
+                            <div class="text-xs uppercase tracking-widest text-text-muted">Migrator</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                            Large-Scale DB Migrator</h3>
+                        <p class="text-sm text-text-muted mb-4 leading-relaxed">
+                            Solved 504 Timeouts by architecting a "Split Strategy" that chunks databases into compressed
+                            ZIPs. Implemented a sequential Restoration Engine for low-memory imports.
+                        </p>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span
+                                class="text-[10px] font-mono bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-400">PHP
+                                Library</span>
+                            <span
+                                class="text-[10px] font-mono bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-400">Restoration
+                                Engine</span>
+                        </div>
+                        <a href="https://github.com/delhiarpitpatel/large-mysql-migrator" target="_blank"
+                            class="inline-flex items-center text-sm font-medium text-white hover:text-blue-400 transition-colors">
+                            View on GitHub <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Domain Platform -->
+                <div class="card-modern rounded-2xl overflow-hidden group">
+                    <div
+                        class="h-48 bg-gradient-to-br from-indigo-900/20 to-surface border-b border-white/5 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                        <div class="text-center relative z-10">
+                            <div class="text-4xl font-mono font-bold text-indigo-400 mb-2">B2B</div>
+                            <div class="text-xs uppercase tracking-widest text-text-muted">SaaS Portal</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">SaaS
+                            Domain Platform</h3>
+                        <p class="text-sm text-text-muted mb-4 leading-relaxed">
+                            Multi-tenant Laravel backend allowing users to manage products and map custom domains from a
+                            single dashboard. Intergrated with OpenCart.
+                        </p>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span
+                                class="text-[10px] font-mono bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-400">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-400">Multi-Tenant</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://domains.propnal.com/" target="_blank"
+                                class="inline-flex items-center text-sm font-medium text-white hover:text-indigo-400 transition-colors">
+                                Live Demo <i class="fa-solid fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: WhatsApp SaaS (New) -->
+                <div class="card-modern rounded-2xl overflow-hidden group">
+                    <div
+                        class="h-48 bg-gradient-to-br from-green-900/20 to-surface border-b border-white/5 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                        <div class="text-center relative z-10">
+                            <div class="text-4xl font-mono font-bold text-green-400 mb-2">FLOW</div>
+                            <div class="text-xs uppercase tracking-widest text-text-muted">Builder Engine</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
+                            WhatsApp SaaS Engine</h3>
+                        <p class="text-sm text-text-muted mb-4 leading-relaxed">
+                            Engineered a No-Code Flow Builder. Solved complex node serialization for backend execution
+                            and implemented a secure webhook rotation layer.
+                        </p>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span
+                                class="text-[10px] font-mono bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-400">Node
+                                Serialization</span>
+                            <span
+                                class="text-[10px] font-mono bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-400">Secure
+                                Webhooks</span>
+                        </div>
+                        <span class="inline-flex items-center text-sm font-medium text-gray-500 cursor-not-allowed">
+                            Internal Tool
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+        <section id="journey" class="w-full max-w-7xl px-6 py-12 border-t border-white/5 relative overflow-hidden">
+            <h2 class="text-3xl font-bold mb-20 text-center">Engineering Journey</h2>
+            <div
+                class="absolute left-6 md:left-1/2 top-48 bottom-24 w-px bg-gradient-to-b from-primary via-secondary to-transparent">
+            </div>
+            <div class="relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                    <div class="w-full md:w-5/12 order-2 md:order-1 pl-12 md:pl-0 md:text-right">
+                        <div
+                            class="card-modern p-6 rounded-xl inline-block w-full text-left md:text-right group hover:border-primary/50 transition-all">
+                            <span class="text-primary font-mono text-xs mb-2 block">JAN 2026 - PRESENT</span>
+                            <h3 class="text-xl font-bold text-white">Principal Architect & Creator</h3>
+                            <div class="text-sm font-bold text-secondary mb-3">BusinessAutomationWithAI</div>
+                            <p class="text-sm text-text-muted leading-relaxed mb-4">
+                                Building an ecosystem to help entrepreneurs replace expensive PaaS with self-hosted
+                                infrastructure.
+                                Producing technical deep-dives on automating SaaS with AI.
+                            </p>
+                            <div class="flex flex-wrap gap-2 justify-start md:justify-end">
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">Multi-Tenant
+                                    Arch</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">Content
+                                    Creation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-background border-4 border-primary transform -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+                    </div>
+                    <div class="w-full md:w-5/12 order-3"></div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                    <div class="w-full md:w-5/12 order-2 md:order-1"></div>
+                    <div
+                        class="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-background border-4 border-white/20 transform -translate-x-1/2 z-20">
+                    </div>
+                    <div class="w-full md:w-5/12 order-3 pl-12 md:pl-0">
+                        <div
+                            class="card-modern p-6 rounded-xl inline-block w-full group hover:border-white/30 transition-all">
+                            <span class="text-text-muted font-mono text-xs mb-2 block">SEP 2025 - PRESENT</span>
+                            <h3 class="text-xl font-bold text-white">Development Wing Member</h3>
+                            <div class="text-sm font-bold text-white/60 mb-3">Ordinateur (CS Society)</div>
+                            <p class="text-sm text-text-muted leading-relaxed mb-4">
+                                fostering open-source contributions within the college ecosystem. Building internal
+                                tools and organizing technical hackathons.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">Hackathons</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">Open
+                                    Source</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                    <div class="w-full md:w-5/12 order-2 md:order-1 pl-12 md:pl-0 md:text-right">
+                        <div
+                            class="card-modern p-6 rounded-xl inline-block w-full text-left md:text-right group hover:border-secondary/50 transition-all">
+                            <span class="text-secondary font-mono text-xs mb-2 block">APR 2022 - PRESENT</span>
+                            <h3 class="text-xl font-bold text-white">Lead SaaS Architect</h3>
+                            <div class="text-sm font-bold text-secondary mb-3">Consultant / Self-Employed</div>
+                            <p class="text-sm text-text-muted leading-relaxed mb-4">
+                                Engineered a WhatsApp Chatbot SaaS with a custom Drag-and-Drop Flow Builder.
+                                Migrated client workloads from PaaS to specialized optimized VPS environments (Rocky
+                                Linux).
+                            </p>
+                            <div class="flex flex-wrap gap-2 justify-start md:justify-end">
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">Laravel/Node</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">Docker/Linux</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">System
+                                    Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-background border-4 border-secondary transform -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                    </div>
+                    <div class="w-full md:w-5/12 order-3"></div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                    <div class="w-full md:w-5/12 order-2 md:order-1"></div>
+                    <div
+                        class="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-background border-4 border-purple-500/50 transform -translate-x-1/2 z-20">
+                    </div>
+                    <div class="w-full md:w-5/12 order-3 pl-12 md:pl-0">
+                        <div
+                            class="card-modern p-6 rounded-xl inline-block w-full group hover:border-purple-500/50 transition-all">
+                            <span class="text-purple-400 font-mono text-xs mb-2 block">JAN 2021 - MAY 2023</span>
+                            <h3 class="text-xl font-bold text-white">Laravel Developer</h3>
+                            <div class="text-sm font-bold text-white/60 mb-3">Freelance</div>
+                            <p class="text-sm text-text-muted leading-relaxed mb-4">
+                                Foundational mastery in MVC architecture. Converted static requirements into dynamic,
+                                database-driven web applications using PHP & MySQL.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">PHP/MySQL</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 text-[10px] font-mono border border-white/10">MVC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education" class="w-full max-w-7xl px-6 py-12 border-t border-white/5">
+            <h2 class="text-3xl font-bold mb-16 text-center">Foundation & Milestones</h2>
+            <div class="space-y-12">
+                <div class="card-modern p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 transition-opacity opacity-50 group-hover:opacity-100">
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div
+                            class="w-full md:w-1/4 flex flex-col items-center justify-center text-center p-6 bg-surface/50 rounded-xl border border-white/5">
+                            <div class="text-4xl font-bold text-white mb-2 tracking-tighter">
+                                <a href="https://www.hansrajcollege.ac.in/" target="_blank" rel="noopener noreferrer"
+                                    class="hover:underline text-white">HANSRAJ</a>
+                            </div>
+                            <div class="text-primary tracking-[0.2em] text-xs font-medium">COLLEGE</div>
+                            <div class="mt-4 text-xs font-mono text-text-muted">University of Delhi</div>
+                            <div
+                                class="mt-2 text-xs font-bold text-green-400 border border-green-500/20 bg-green-500/10 px-3 py-1 rounded-full">
+                                Pursuing</div>
+                        </div>
+
+                        <div class="w-full md:w-3/4 space-y-4">
+                            <div class="flex flex-col md:flex-row justify-between items-start">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white">B.Sc. (Hons) Computer Science</h3>
+                                    <p class="text-primary font-medium text-sm">Development Wing Member @ Ordinateur</p>
+                                    <a href="https://www.hansrajcollege.ac.in/" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-xs text-primary underline hover:text-indigo-400">hansrajcollege.ac.in</a>
+                                </div>
+                                <span class="text-xs font-mono text-text-muted mt-2 md:mt-0">AUG 2025 - MAY 2029</span>
+                            </div>
+
+                            <p class="text-sm text-text-muted leading-relaxed">
+                                Specializing in Systems Architecture and Computational Theory. Building a theoretical
+                                foundation to support practical engineering work.
+                            </p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                                <div>
+                                    <span class="text-xs font-bold text-white uppercase tracking-wider mb-2 block">Core
+                                        Coursework</span>
+                                    <ul class="space-y-1 text-xs text-text-muted">
+                                        <li class="flex items-start gap-2"><span class="text-primary">•</span>
+                                            <span>Computer System Architecture (CSA)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2"><span class="text-primary">•</span>
+                                            <span>Object-Oriented Programming (Python)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2"><span class="text-primary">•</span>
+                                            <span>Maths for Computing (LinAlg/Calc)</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="flex items-end">
+                                    <div class="text-xs text-text-muted italic border-l-2 border-primary/30 pl-3">
+                                        "Focusing on logic gates, memory hierarchy, and processor design logic."
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-modern p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -mr-16 -mt-16 transition-opacity opacity-50 group-hover:opacity-100">
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div
+                            class="w-full md:w-1/4 flex flex-col items-center justify-center text-center p-6 bg-surface/50 rounded-xl border border-white/5">
+                            <div class="text-5xl font-bold text-white mb-0 tracking-tighter">100</div>
+                            <div class="text-2xl font-bold text-text-muted/50 -mt-2">/100</div>
+                            <div class="mt-4 text-xs font-bold text-secondary uppercase tracking-widest">Perfect Score
+                            </div>
+                            <div class="text-[10px] font-mono text-text-muted">Class XII CS</div>
+                        </div>
+                        <div class="w-full md:w-3/4 space-y-4">
+                            <div class="flex flex-col md:flex-row justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Senior Secondary (Class XII)</h3>
+                                    <p class="text-secondary font-medium text-sm">
+                                        <a href="https://sbmschool.in/" target="_blank" rel="noopener noreferrer"
+                                            class="hover:underline text-secondary">S.B.Mills Sr. Sec. School. Shivaji
+                                            Marg</a>
+                                    </p>
+                                </div>
+                                <span class="text-xs font-mono text-text-muted mt-2 md:mt-0">JUL 2023 - MAY 2025</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-3 bg-background/50 rounded border border-white/5">
+                                    <span class="block text-xs text-text-muted uppercase">CUET UG Score</span>
+                                    <span class="text-lg font-bold text-white">234 <span
+                                            class="text-xs text-text-muted font-normal">/ 250</span></span>
+                                </div>
+                                <div class="p-3 bg-background/50 rounded border border-white/5">
+                                    <span class="block text-xs text-text-muted uppercase">Focus Area</span>
+                                    <span class="text-sm font-bold text-white">Maths & Computer Science</span>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-text-muted leading-relaxed">
+                                Developed initial Full-Stack projects (PHP/MySQL) during this period, laying the
+                                groundwork for professional consulting work in distributed systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="w-full max-w-7xl mx-auto px-6 py-32 border-t border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">
+                        Let's build something <span class="text-gradient-primary">legendary.</span>
+                    </h2>
+                    <p class="text-text-muted mb-8 leading-relaxed">
+                        Whether you're looking to architect a new SaaS, automate a WhatsApp workflow, or just want to
+                        talk tech - I'm just a message away.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-primary border border-white/5 group-hover:border-primary/50 transition-all">
+                                <i class="fa-solid fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-text-muted uppercase font-bold tracking-widest">Email Me</p>
+                                <a href="mailto:delhiarpitpatel@gmail.com"
+                                    class="text-white hover:text-primary transition-colors">delhiarpitpatel@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-green-400 border border-white/5 group-hover:border-green-400/50 transition-all">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-text-muted uppercase font-bold tracking-widest">WhatsApp</p>
+                                <a href="https://wa.me/919773697387" target="_blank"
+                                    class="text-white hover:text-green-400 transition-colors">+91 97736 97387</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-secondary border border-white/5 group-hover:border-secondary/50 transition-all">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-text-muted uppercase font-bold tracking-widest">Location</p>
+                                <p class="text-white">New Delhi, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-modern p-8 rounded-3xl border border-white/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4">
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-[10px] font-bold uppercase tracking-widest border border-green-500/20">System
+                            Online</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-yellow-400"></i> Quick Connect
+                    </h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div class="text-xs text-text-muted mb-2 italic">After clicking Send Message, please send it via
+                            your email client when prompted. Thank you!</div>
+                        <input type="text" id="name" placeholder="Your Name" required
+                            class="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-white">
+
+                        <input type="email" id="email" placeholder="Email Address" required
+                            class="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-white">
+
+                        <textarea id="message" placeholder="Tell me about your project..." rows="4" required
+                            class="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-white"></textarea>
+
+                        <button type="submit"
+                            class="w-full py-4 rounded-xl bg-primary text-white font-bold hover:bg-indigo-500 transition-all flex items-center justify-center gap-2">
+                            Send Message <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="w-full py-12 border-t border-white/5 bg-background">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="flex flex-col items-center md:items-start">
+                        <div class="items-center gap-2 mb-2">
+                            <span class="font-bold text-white">Arpit Patel</span>
+                        </div>
+                        <p class="text-xs text-text-muted">Architecting the future, one node at a time.</p>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <a href="https://github.com/delhiarpitpatel" target="_blank"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-text-muted hover:bg-white hover:text-black transition-all">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/delhiarpitpatel" target="_blank"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-text-muted hover:bg-blue-500 hover:text-white transition-all">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://x.com/delhiarpitpatel" target="_blank"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-text-muted hover:bg-sky-500 hover:text-white transition-all">
+                            <i class="fa-brands fa-x-twitter text-lg"></i>
+                        </a>
+                    </div>
+                    <p class="text-[10px] font-mono text-text-muted uppercase tracking-tighter">
+                        &copy; 2026 Arpit Patel // All Systems Operational
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Basic validation
+        if (!name.trim() || !email.trim() || !message.trim()) {
+            alert('Please fill in all fields');
+            return;
+        }
+
+        const subject = encodeURIComponent(`Project Inquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+        // Visual feedback
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Opening Email...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            window.location.href = `mailto:delhiarpitpatel@gmail.com?subject=${subject}&body=${body}`;
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        }, 500);
+    });
+
+    // Loading Screen
+    window.addEventListener('load', function () {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = mobileMenuBtn.querySelector('i');
+
+    mobileMenuBtn.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-xmark');
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.add('fa-bars');
+            menuIcon.classList.remove('fa-xmark');
+        });
+    });
+</script>
+
+</html>
