@@ -40,7 +40,7 @@
                         secondary: '#38bdf8',
                         text: {
                             main: '#f8fafc',
-                            muted: '#94a3b8',
+                            muted: '#cbd5e1',
                         }
                     }
                 }
@@ -51,6 +51,7 @@
 </head>
 
 <body class="selection:bg-primary selection:text-white">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Loading Screen -->
     <div id="loader"
         class="fixed inset-0 z-[100] bg-background flex items-center justify-center transition-opacity duration-500">
@@ -66,7 +67,7 @@
     <nav class="fixed top-0 w-full z-50 px-6 py-2 border-b border-white/5 bg-background/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <img src="./assets/images/arpit-patel.png" alt="AP" loading="lazy"
+                <img src="./assets/images/arpit-patel.png" alt="Portrait of Arpit Patel" loading="lazy"
                     class="w-12 h-12 object-contain rounded-full">
                 <span class="font-semibold tracking-tight text-white">Arpit Patel</span>
             </div>
@@ -87,7 +88,8 @@
                     <i class="fa-solid fa-paper-plane mr-1 md:mr-2"></i><span class="hidden sm:inline">Hire
                         Me</span><span class="sm:hidden">Hire</span>
                 </a>
-                <button id="mobileMenuBtn" class="md:hidden text-white text-xl p-2" aria-label="Toggle Menu">
+                <button id="mobileMenuBtn" class="md:hidden text-white text-xl p-2" aria-label="Toggle menu"
+                    aria-controls="mobileMenu" aria-expanded="false">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -108,7 +110,7 @@
             </div>
         </div>
     </nav>
-    <main class="relative z-10 flex flex-col items-center">
+    <main id="main-content" class="relative z-10 flex flex-col items-center">
         <section id="home" class="min-h-screen w-full max-w-7xl mx-auto px-6 flex flex-col justify-center py-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="space-y-8">
@@ -686,17 +688,25 @@
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
                         <i class="fa-solid fa-bolt text-yellow-400"></i> Quick Connect
                     </h3>
-                    <form id="contactForm" class="space-y-4">
-                        <div class="text-xs text-text-muted mb-2 italic">After clicking Send Message, please send it via
-                            your email client when prompted. Thank you!</div>
-                        <input type="text" id="name" placeholder="Your Name" required
+                    <form id="contactForm" class="space-y-4" action="https://api.staticforms.dev/submit" method="POST">
+                        <input type="hidden" name="apiKey" value="sf_6cdbc1b3bbe83c39dbf4e36b">
+                        <input type="hidden" name="subject" value="New portfolio inquiry">
+                        <input type="hidden" name="redirectTo" value="https://delhiarpitpatel.github.io/#contact">
+                        <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <label for="name" class="text-xs font-semibold uppercase tracking-wider text-text-muted">Your Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required
                             class="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-white">
 
-                        <input type="email" id="email" placeholder="Email Address" required
+                        <label for="email" class="text-xs font-semibold uppercase tracking-wider text-text-muted">Email Address</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required
                             class="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-white">
 
-                        <textarea id="message" placeholder="Tell me about your project..." rows="4" required
+                        <label for="message" class="text-xs font-semibold uppercase tracking-wider text-text-muted">Project Details</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project..." rows="4" required
                             class="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-white"></textarea>
+                        <p class="text-xs text-text-muted min-h-[1rem]" role="status" aria-live="polite">
+                            Thankyou for submitting contact form.
+                        </p>
 
                         <button type="submit"
                             class="w-full py-4 rounded-xl bg-primary text-white font-bold hover:bg-indigo-500 transition-all flex items-center justify-center gap-2">
@@ -739,38 +749,6 @@
     </main>
 </body>
 <script>
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // Basic validation
-        if (!name.trim() || !email.trim() || !message.trim()) {
-            alert('Please fill in all fields');
-            return;
-        }
-
-        const subject = encodeURIComponent(`Project Inquiry from ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-
-        // Visual feedback
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Opening Email...';
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-            window.location.href = `mailto:delhiarpitpatel@gmail.com?subject=${subject}&body=${body}`;
-
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        }, 500);
-    });
-
     // Loading Screen
     window.addEventListener('load', function () {
         const loader = document.getElementById('loader');
@@ -789,6 +767,8 @@
         mobileMenu.classList.toggle('hidden');
         menuIcon.classList.toggle('fa-bars');
         menuIcon.classList.toggle('fa-xmark');
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
     });
 
     // Close mobile menu when clicking a link
@@ -797,6 +777,7 @@
             mobileMenu.classList.add('hidden');
             menuIcon.classList.add('fa-bars');
             menuIcon.classList.remove('fa-xmark');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
     });
 </script>
