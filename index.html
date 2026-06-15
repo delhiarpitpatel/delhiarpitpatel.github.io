@@ -782,7 +782,7 @@
                     <form id="contactForm" class="space-y-4" action="https://api.staticforms.dev/submit" method="POST">
                         <input type="hidden" name="apiKey" value="sf_6cdbc1b3bbe83c39dbf4e36b">
                         <input type="hidden" name="subject" value="New portfolio inquiry">
-                        <input type="hidden" name="redirectTo" value="https://delhiarpitpatel.github.io/#contact">
+                        <input type="hidden" name="redirectTo" value="https://delhiarpitpatel.github.io/?submitted=true#contact">
                         <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <label for="name" class="text-xs font-semibold uppercase tracking-wider text-text-muted">Your Name</label>
                         <input type="text" id="name" name="name" autocomplete="name" required
@@ -837,6 +837,21 @@
                 </div>
             </div>
         </footer>
+        <!-- Custom Thank You Modal -->
+        <div id="thankYouModal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fade-in">
+            <div class="card-modern rounded-2xl p-8 max-w-sm w-full border border-white/10 bg-surface text-center space-y-4 shadow-2xl">
+                <div class="w-12 h-12 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">Message Sent!</h3>
+                <p class="text-sm text-text-muted leading-relaxed">
+                    Thank you for reaching out, Arpit here. I have received your details and will get back to your inbox shortly.
+                </p>
+                <button id="closeModalBtn" class="w-full py-2.5 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-indigo-500 transition-all">
+                    Close Window
+                </button>
+            </div>
+        </div>
     </main>
 </body>
 <script>
@@ -870,6 +885,29 @@
             menuIcon.classList.remove('fa-xmark');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
+    });
+
+    // Form Submission Custom Modal Listener
+    window.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const modal = document.getElementById('thankYouModal');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        if (urlParams.get('submitted') === 'true' && modal) {
+            // Show Modal cleanly
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Close event
+            closeBtn.addEventListener('click', function() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            });
+
+            // Clean-up URL routing parameters from address bar
+            const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.hash;
+            window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+        }
     });
 </script>
 
